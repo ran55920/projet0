@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+        <!-- مكتبة أيقونات Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        
+        <style>
+            html {
+              scroll-behavior: smooth;
+            }
+            </style>
+            
+    <title>Xp</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+              <!--home-->
+              <section id="home">
+    <div class="slideshow-container">
+      
+        <div class="slide fade active">
+            <img src="public/1_bgr.jpg" alt="Background 1">
+            <div class="overlay">
+                <div class="text-overlay">
+                    <h3>
+                    <span class="highlight">Shining</span> Through Their <span class="highlight">Struggles</span>
+                </h3>
+                    <p>They fight every day against a world not built for them.</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide fade">
+            <img src="public/2_bgr.jpg" alt="Background 2">
+            <div class="overlay">
+                <div class="text-overlay">
+                    <h3> <span class="highlight">Shining</span> Through Their <span class="highlight">Struggles</span></h3>
+                    <p>We stand by their side — with care, science, and compassion.</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide fade">
+            <img src="public/3_bgr.jpg" alt="Background 3">
+            <div class="overlay">
+                <div class="text-overlay">
+                    <h3> <span class="highlight">Shining</span> Through Their <span class="highlight">Struggles</span></h3>
+                    <p>They fight every day against a world not built for them.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="public/logo_xp_luna.webp" alt="Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#index" class="nav-item">Home</a></li>
+            <li><a href="#announcements" class="nav-item">Announcements 📢</a></li>
+            <li><a href="#guidelines" class="nav-item">Guidelines 📖</a></li>
+            <li><a href="#testimonials" class="nav-item">Testimonials 💬</a></li>
+         
+        </ul>
+        
+        <div class="auth-buttons">
+          
+            <button class="auth-btn login-btn" id="loginBtn">
+                <i class="fas fa-sign-in-alt"></i>
+                Log In
+            </button>
+            <button class="auth-btn signup-btn" id="signupBtn">
+                <i class="fas fa-user-plus"></i>
+                Sign Up
+            </button>
+            <button class="emergency" onclick="openEmergencyModal()">🆘Emergency</button> 
+        </div>
+    </nav>
+
+
+
+    <button class="emergency-btn" onclick="openEmergencyModal()">
+
+        <img src= "public/ambulance.png">
+        <span>Emergency</span>
+    </button>
+  
+
+
+    <!-- Login Modal -->
+    <div class="auth-modal" id="loginModal">
+        <div class="auth-container">
+            <button class="close-btn" id="closeLogin">&times;</button>
+            <div class="logo">
+                <i class="fas fa-user-shield" style="color: #0077b6; font-size: 2.5rem;"></i>
+            </div>
+            <h2 class="auth-title">Log In to Your Account</h2>
+            
+            <form class="auth-form" id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" required>
+                    <div class="forgot-password">
+                        <a href="#" id="forgotPasswordLink">Forgot password?</a>
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn">Log In</button>
+            </form>
+            
+            <div class="divider">or</div>
+            
+            <button class="google-btn" id="googleLoginBtn">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google logo" width="20">
+                Continue with Google
+            </button>
+            
+            <div class="auth-footer">
+                Don't have an account? <a href="#" id="switchToSignup">Sign Up</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="auth-modal" id="signupModal">
+        <div class="auth-container">
+            <button class="close-btn" id="closeSignup">&times;</button>
+            <div class="logo">
+                <i class="fas fa-user-plus" style="color: #0077b6; font-size: 2.5rem;"></i>
+            </div>
+            <h2 class="auth-title">Create New Account</h2>
+            
+            <form class="auth-form" id="signupForm">
+                <div class="form-group">
+                    <label for="signupName">Full Name</label>
+                    <input type="text" id="signupName" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupConfirm">Confirm Password</label>
+                    <input type="password" id="signupConfirm" required>
+                </div>
+                <button type="submit" class="submit-btn">Sign Up</button>
+            </form>
+            
+            <div class="divider">or</div>
+            
+            <button class="google-btn" id="googleSignupBtn">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google logo" width="20">
+                Sign Up with Google
+            </button>
+            
+            <div class="auth-footer">
+                Already have an account? <a href="#" id="switchToLogin">Log In</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div class="auth-modal" id="forgotPasswordModal">
+        <div class="auth-container">
+            <button class="close-btn" id="closeForgotPassword">&times;</button>
+            <div class="logo">
+                <i class="fas fa-key" style="color: #0077b6; font-size: 2.5rem;"></i>
+            </div>
+            <h2 class="auth-title">Reset Your Password</h2>
+            
+            <form class="auth-form" id="forgotPasswordForm">
+                <div class="form-group">
+                    <label for="forgotEmail">Email Address</label>
+                    <input type="email" id="forgotEmail" required>
+                    <p style="font-size: 0.8rem; color: #666; margin-top: 5px;">
+                        We'll send you a link to reset your password
+                    </p>
+                </div>
+                <button type="submit" class="submit-btn">Send Reset Link</button>
+            </form>
+            
+            <div class="auth-footer">
+                Remember your password? <a href="#" id="backToLogin">Back to Log In</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Account Modal -->
+    <div class="auth-modal" id="deleteAccountModal">
+        <div class="auth-container">
+            <button class="close-btn" id="closeDeleteAccount">&times;</button>
+            <div class="logo">
+                <i class="fas fa-exclamation-triangle" style="color: #ff4d4d; font-size: 2.5rem;"></i>
+            </div>
+            <h2 class="auth-title" style="color: #ff4d4d;">Delete Account</h2>
+            
+            <div style="text-align: left; margin-bottom: 20px;">
+                <p style="margin-bottom: 10px; color: #333;">Are you sure you want to delete your account?</p>
+                <p style="font-size: 0.9rem; color: #666;">
+                    This action cannot be undone. All your data will be permanently removed.
+                </p>
+            </div>
+            
+            <form class="auth-form" id="deleteAccountForm">
+                <div class="form-group">
+                    <label for="deletePassword">Enter your password to confirm</label>
+                    <input type="password" id="deletePassword" required>
+                </div>
+                
+                <div class="user-actions">
+                    <button type="button" class="auth-btn signup-btn" id="cancelDelete">
+                        Cancel
+                    </button>
+                    <button type="submit" class="auth-btn delete-btn">
+                        <i class="fas fa-trash-alt"></i>
+                        Delete Account Permanently
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div id="emergencyModal" class="modal">
+        <div class="modal-content">
+            <h2>🚨 Emergency Situation</h2>
+
+            <label for="emergencyType">Choose an emergency:</label>
+            <select id="emergencyType">
+                <option value="">-- Select an emergency --</option>
+                <option value="Sunburn">☀️ Sunburn</option>
+                <option value="Eye Irritation">👀 Eye Irritation</option>
+                <option value="Skin Lesion">🩹 Skin Lesion</option>
+                <option value="Severe Fatigue">😓 Severe Fatigue</option>
+                <option value="Migraine">🤕 Migraine</option>
+                <option value="Infection">🦠 Infection</option>
+            </select>
+
+            <label for="emergencyDescription">Describe the situation:</label>
+            <textarea id="emergencyDescription" placeholder="Describe your condition..."></textarea>
+
+            <p id="errorMessage" class="error-message"></p>
+
+            <button class="send-button" onclick="validateAndSend()">📩 Submit</button>
+            <button class="close-button" onclick="closeEmergencyModal()">❌ Close</button>
+        </div>
+    </div>
+
+    <div id="modalOverlay" class="modal-overlay" onclick="closeEmergencyModal()"></div>
+              </section>
+              
+
+
+              <!--announcements-->
+              <section id="announcements">
+            <!-- Right Side Intro Text -->
+  <div class="intro-box">
+    <div class="blue-border"></div>
+    <p class="intro-text">
+      Welcome to the announcement board for children with XP. Here you'll find updates on support, medication, motivational content, and important medical news.
+    </p>
+  </div>
+
+  <!-- Left Side Slider & Announcements -->
+  <div class="announcement-slider">
+    <!-- Filter Buttons -->
+    <div class="filter-buttons">
+      <button class="filter-btn">All</button>
+      <button class="filter-btn">Donations</button>
+      <button class="filter-btn">Medicines</button>
+      <button class="filter-btn">Motivation</button>
+    </div>
+
+    <!-- Add Announcement Button -->
+    <button class="add-btn">+ Add Announcement</button>
+
+    <!-- Announcement Cards -->
+    <div class="announcement-card" data-category="Donations" style="background-image: url('public/donation.jpg');">
+      <div class="card-icon">💰</div>
+      <div class="card-content">
+        <h3>Donation Campaign for Sunscreens</h3>
+        <p>Help protect our kids' skin and offer safety.</p>
+        <button>Learn More</button>
+      </div>
+    </div>
+
+    <div class="announcement-card" data-category="Medicines" style="background-image: url('public/medicine.jpg');">
+      <div class="card-icon">💊</div>
+      <div class="card-content">
+        <h3>New Medicines Available</h3>
+        <p>Check updates with your doctor.</p>
+        <button>Learn More</button>
+      </div>
+    </div>
+
+    <div class="announcement-card" data-category="Motivation" style="background-image: url('public/motivation.jpg');">
+      <div class="card-icon">🌟</div>
+      <div class="card-content">
+        <h3>You are the light of this world</h3>
+        <p>Never let the darkness dim your shine.</p>
+        <button>Learn More</button>
+      </div>
+    </div>
+  </div>
+  </section>
+
+
+
+<!--#guidelines-->
+<section id="guidelines">
+  <header>
+    <h1>Medical Guidelines for Children of the Moon 🌙</h1>
+  </header>
+  <div class="catalog-container">
+    <div class="catalog">
+      <h2>Medical Catalog 📖</h2>
+      <button onclick="showContent('emergency')">Emergency Handling</button>
+      <button onclick="showContent('lighting')">Lighting Precautions</button>
+      <button onclick="showContent('medications')">Medications</button>
+      <button onclick="showContent('skin-protection')">Skin Protection Tips</button>
+    </div>
+  </div>
+  <!-- Emergency Content -->
+  <div id="emergency" class="content">
+    <div class="content-inner">
+      <h2>Emergency Handling</h2>
+      <p>In case of sunburn or other emergencies:</p>
+      <img src="public/emergency.jpg" alt="Emergency Handling">
+      <ul>
+        <li>Seek immediate medical attention.</li>
+        <li>Use cold compresses to soothe burns.</li>
+        <li>Keep emergency contacts handy.</li>
+      </ul>
+      <button class="close-btn" onclick="hideContent()">Close</button>
+    </div>
+  </div>
+  <!-- Lighting Content -->
+  <div id="lighting" class="content">
+    <div class="content-inner">
+      <h2>Lighting Precautions</h2>
+      <p>To protect against UV exposure:</p>
+      <img src="public/lighting.jpg" alt="Lighting Precautions">
+      <ul>
+        <li>Avoid direct sunlight exposure.</li>
+        <li>Use UV-blocking window films.</li>
+        <li>Wear protective clothing and hats.</li>
+      </ul>
+      <button class="close-btn" onclick="hideContent()">Close</button>
+    </div>
+  </div>
+  <!-- Medications Content -->
+  <div id="medications" class="content">
+    <div class="content-inner">
+      <h2>Medications</h2>
+      <p>Follow these guidelines for medications:</p>
+      <img src="public/medications.jpg" alt="Medications">
+      <ul>
+        <li>Follow prescribed schedules strictly.</li>
+        <li>Consult a doctor before starting new treatments.</li>
+        <li>Store medications in a cool, dry place.</li>
+      </ul>
+      <button class="close-btn" onclick="hideContent()">Close</button>
+    </div>
+  </div>
+  <style>
+  #guidelines{
+    background-image: url("public/background.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #FFD700;
+    }
+    h1 {
+      margin: 0;
+    }
+    /* Catalog Section */
+    .catalog-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+    }
+    .catalog {
+      width: 80%;
+      max-width: 900px;
+      background-color: rgba(255, 255, 255, 0.1); /* خلفية شفافة للكتالوج */
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px); /* تأثير ضبابي للخلفية */
+      padding: 20px;
+      text-align: center;
+    }
+    .catalog h2 {
+      color: #FFD700;
+      margin-bottom: 20px;
+    }
+    .catalog button {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      border: none;
+      padding: 15px 30px;
+      margin: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-size: 16px;
+    }
+    .catalog button:hover {
+      background-color: rgba(255, 215, 0, 0.3);
+    }
+    /* Content Section */
+    .content {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 1000;
+      overflow-y: auto;
+      padding: 20px;
+    }
+    .content-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 15px;
+      padding: 20px;
+      backdrop-filter: blur(10px);
+    }
+    .content h2 {
+      color: #FFD700;
+      margin-bottom: 20px;
+    }
+    .content p {
+      color: #fff;
+      line-height: 1.6;
+    }
+    .content img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin: 10px 0;
+    }
+    .close-btn {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .close-btn:hover {
+      background-color: rgba(255, 215, 0, 0.3);
+    }
+</style>
+      </section>    
+ 
+
+
+
+
+  <!--Testimonials-->
+                  
+  <section id="testimonials">
+    <h2 class="section-title">Patients' Testimonials 💬</h2>
+    <div class="testimonial-carousel-wrapper">
+      <div class="testimonial-carousel">
+        <div class="testimonial-card">
+          <img src="public/user1.jpg" alt="Patient Photo">
+          <p class="testimonial-text">Dr. Smith helped me regain hope. Forever grateful.</p>
+        </div>
+        <div class="testimonial-card">
+          <img src="public/user2.jpg" alt="Patient Photo">
+          <p class="testimonial-text">Thanks to the treatment plan, I’m living better days.</p>
+        </div>
+        <div class="testimonial-card">
+          <img src="public/user3.jpg" alt="Patient Photo">
+          <p class="testimonial-text">The support here is unmatched. A true blessing!</p>
+        </div>
+        <div class="testimonial-card">
+          <img src="public/user4.jpg" alt="Patient Photo">
+          <p class="testimonial-text">I trust this team with all my heart. Amazing work!</p>
+        </div>
+        <div class="testimonial-card">
+          <img src="public/user5.jpg" alt="Patient Photo">
+          <p class="testimonial-text">My skin has improved drastically. Thank you!</p>
+        </div>
+        <div class="testimonial-card">
+          <img src="public/user6.jpg" alt="Patient Photo">
+          <p class="testimonial-text">I found care, love, and healing here. Deep thanks!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <style>
+  #testimonials {
+    background-image: url("public/background.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 60px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  }
+  
+  .testimonial-carousel-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    max-width: 100vw;
+  }
+  
+  .testimonial-carousel {
+    display: flex;
+    gap: 30px;
+    width: max-content;
+    animation: scrollTestimonials 25s linear infinite;
+  }
+  
+  .testimonial-carousel:hover {
+    animation-play-state: paused;
+  }
+  
+  .testimonial-card {
+    width: 300px;
+    height: 240px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid #48cae4;
+    box-shadow: 0 0 15px rgba(72, 202, 228, 0.6);
+    backdrop-filter: blur(8px);
+    border-radius: 15px;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  
+  .testimonial-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .testimonial-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+    border: 2px solid #48cae4;
+  }
+  
+  .testimonial-text {
+    color: #f0f0f0;
+    font-size: 1rem;
+    font-style: italic;
+  }
+  
+  @keyframes scrollTestimonials {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+  </style>
+              </section>
+
+
+
+
+
+              <!--fouter-->
+              <footer id="footer">
+                <div class="footer-content">
+                  <div class="social-links">
+                    <a href="https://www.instagram.com" target="_blank" class="social-icon">Instagram</a>
+                    <a href="https://twitter.com" target="_blank" class="social-icon">Twitter</a>
+                    <a href="https://www.facebook.com" target="_blank" class="social-icon">Facebook</a>
+                    <a href="https://www.linkedin.com" target="_blank" class="social-icon">LinkedIn</a>
+                  </div>
+                  <div class="footer-rights">
+                    <p>&copy; 2025 Moon Children. All rights reserved.</p>
+                  </div>
+                  <div class="footer-pages">
+                    <ul>
+                      <li><a href="#terms">Terms & Conditions</a></li>
+                      <li><a href="#privacy-policy">Privacy Policy</a></li>
+                      <li><a href="#contact-us">Contact Us</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </footer>
+              
+              <style>
+              #footer {
+                background-color: #2c3e50;
+                color: white;
+                padding: 40px 20px;
+                text-align: center;
+                position: relative;
+                bottom: 0;
+                width: 100%;
+              }
+              
+              .footer-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+              }
+              
+              .social-links {
+                margin-bottom: 20px;
+              }
+              
+              .social-icon {
+                color: #48cae4;
+                margin: 0 15px;
+                text-decoration: none;
+                font-size: 1.2rem;
+                transition: color 0.3s;
+              }
+              
+              .social-icon:hover {
+                color: #f39c12;
+              }
+              
+              .footer-rights p {
+                font-size: 1rem;
+                color: #95a5a6;
+                margin: 10px 0;
+              }
+              
+              .footer-pages ul {
+                list-style: none;
+                padding: 0;
+                display: flex;
+                gap: 20px;
+              }
+              
+              .footer-pages a {
+                color: #fff;
+                text-decoration: none;
+                font-size: 1rem;
+                transition: color 0.3s;
+              }
+              
+              .footer-pages a:hover {
+                color: #f39c12;
+              }
+              
+              @media (max-width: 768px) {
+                .footer-content {
+                  flex-direction: column;
+                  align-items: center;
+                }
+              
+                .footer-pages ul {
+                  flex-direction: column;
+                  align-items: center;
+                }
+              }
+              </style>
+              
+  
+  
+  
+              
+
+
+
+
+
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+
+
+
+
